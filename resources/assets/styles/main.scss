@@ -12,7 +12,10 @@
 // @import "~some-node-module";
 
 /** Import theme styles */
+@import "framework/framework";
 @import "common/global";
+@import "common/mixins";
+@import "common/typography";
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";
@@ -23,6 +26,7 @@
 @import "layouts/pages";
 @import "layouts/posts";
 @import "layouts/tinymce";
-body{
-    background: red;
-}
+@import "partials/hero";
+@import "partials/post-cards";
+@import "partials/home-page";
+@import "partials/destination";

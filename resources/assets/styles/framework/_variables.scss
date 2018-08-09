@@ -1,0 +1,36 @@
+// Variables
+
+// Device Widths
+//
+// Define device widths, applied to .container element. Divisible by 12 & 16. Values must be ascending.
+
+$device-widths: (
+        m: 360px,
+        ml: 480px,
+        t: 720px,
+        lt: 960px,
+        d: 1160px,
+) !default;
+
+
+// Device break-points
+//
+// Define device break-points. Must start with a breakpoint of 0 & values must be ascending.
+
+$device-breakpoints: (
+        reset: 0,
+        m: 424px,
+        ml: 544px,
+        t: 784px,
+        lt: 1024px,
+        d: 1200px,
+) !default;
+
+
+
+// Columns
+//
+// Specify amount of columns and the size of the gap.
+
+$columns: 12 !default;
+$column-gap: 2rem !default;

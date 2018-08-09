@@ -1,0 +1,136 @@
+@mixin build-columns($columns: $columns, $gap: $column-gap, $breakpoints: $device-breakpoints) {
+  %defaults {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: ($gap / 2);
+    padding-left: ($gap / 2);
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    $min: device-min($breakpoint, $breakpoints);
+    $label: if($min, $breakpoint, 'all');
+
+    @for $i from 1 through $columns {
+      .\__#{$label}-#{$i} {
+        @extend %defaults;
+      }
+    }
+
+    .\__#{$label},
+    .\__#{$label}-auto {
+      @extend %defaults;
+    }
+
+    @include device-up($breakpoint, $breakpoints) {
+
+      $device-label: '';
+
+      @if $label != 'all' {
+        $device-label: '--#{$label}';
+      }
+
+      .\--float-left#{$device-label} {
+        float: left !important;
+      }
+
+      .\--float-right#{$device-label} {
+        float: right !important;
+      }
+
+      .\--float-none#{$device-label} {
+        float: none !important;
+      }
+
+      .\--d-none#{$device-label} {
+        display: none !important;
+      }
+
+      .\--d-inline#{$device-label} {
+        display: inline !important;
+      }
+
+      .\--d-inline-block#{$device-label} {
+        display: inline-block !important;
+      }
+
+      .\--d-block#{$device-label} {
+        display: block !important;
+      }
+
+      .\--d-table#{$device-label} {
+        display: table !important;
+      }
+
+      .\--d-table-row#{$device-label} {
+        display: table-row !important;
+      }
+
+      .\--d-table-cell#{$device-label} {
+        display: table-cell !important;
+      }
+
+      .\--d-flex#{$device-label} {
+        display: flex !important;
+      }
+
+      .\--d-inline-flex#{$device-label} {
+        display: inline-flex !important;
+      }
+
+      .\--text-left#{$device-label} {
+        text-align: left !important;
+      }
+
+      .\--text-right#{$device-label} {
+        text-align: right !important;
+      }
+
+      .\--text-center#{$device-label} {
+        text-align: center !important;
+      }
+    }
+
+    @include device-up($breakpoint, $breakpoints) {
+      .\__#{$label} {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+
+        &-order-first {
+          order: -1;
+        }
+
+        &-order-last {
+          order: $columns + 1;
+        }
+
+        @for $i from 0 through $columns {
+          &-order-#{$i} {
+            order: $i;
+          }
+        }
+      }
+
+      .\__#{$label}-auto {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: none;
+      }
+
+      @for $i from 1 through $columns {
+        .\__#{$label}-#{$i} {
+          flex: 0 0 calc(100% * #{$i} / #{$columns});
+          max-width: calc(100% * #{$i} / #{$columns});
+
+          @if not ($label == "all" and $i == 0) {
+            &-offset {
+              $num: $i / $columns;
+              margin-left: if($num == 0, 0, calc(100% * #{$i} / #{$columns}));
+            }
+          }
+        }
+      }
+    }
+  }
+}

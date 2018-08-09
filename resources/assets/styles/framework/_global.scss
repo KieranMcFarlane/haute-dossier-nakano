@@ -1,0 +1,19 @@
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #FAFAFA;
+
+  &.stick {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+main{
+  flex: 1;
+}
+
+p, a li {
+  font-family: $body-font;
+}

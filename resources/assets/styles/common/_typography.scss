@@ -1,0 +1,60 @@
+h1,h2,h3,h4,h5,h6,hgroup,
+ul,ol,dd,
+p,figure,
+pre,table,fieldset,hr,
+.header,.media,.island {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom:1.5rem;
+}
+
+$sub-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+h1 {
+    font-size: 3.375em;
+}
+
+h2 {
+    font-size: 2.25em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1em;
+}
+
+p {
+    font-size: 1em;
+    color: coral;
+}
+
+/* Font Weights */
+
+$thin: 100;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semi-bold: 500;
+$bold: 700;
+
+
+.thin-header{
+    font-size: 38px;
+    font-weight: $thin;
+    letter-spacing: 4.75px;
+}
+
+.section-header{
+    font-weight: $bold;
+    font-size: 33px;
+    color: #646464;
+    letter-spacing: 4.12px;
+    text-transform: uppercase;
+
+    padding-top: 2.5rem;
+    @include device-up(lt){
+        padding-top: 6.5rem;
+    }
+}

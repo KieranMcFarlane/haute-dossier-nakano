@@ -1,0 +1,17 @@
+// Minimum device breakpoint width. Smallest breakpoint will be a null value
+
+@function device-min($name, $breakpoints: $device-breakpoints) {
+  $min: map-get($breakpoints, $name);
+
+  @return if(0 != $min, $min, null);
+}
+
+// Maximum device breakpoint width. Largest breakpoint will be a null value
+
+@function device-max($name, $breakpoints: $device-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+  $next: if(index($breakpoint-names, $name) < length($breakpoint-names),
+          nth($breakpoint-names,
+                  index($breakpoint-names, $name) + 1), null);
+
+  @return if($next, device-min($next, $breakpoints) - .02px, null);
+}
