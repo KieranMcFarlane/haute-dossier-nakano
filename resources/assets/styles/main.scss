@@ -1,4 +1,5 @@
 @import "common/variables";
+@import "partials/variables";
 
 /** Import everything from autoload */
 @import "./autoload/**/*";
@@ -30,3 +31,4 @@
 @import "partials/post-cards";
 @import "partials/home-page";
 @import "partials/destination";
+@import "partials/instagram-section";

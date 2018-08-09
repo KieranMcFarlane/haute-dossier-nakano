@@ -16,3 +16,32 @@
         }
     }
 }
+
+.jump-to__section{
+    line-height: 1;
+    a{
+        opacity: 0.5;
+        font-family: Montserrat-Bold;
+        font-size: 13px;
+        color: #646464;
+        text-transform: uppercase;
+        letter-spacing: 4.12px;
+        &:first-of-type{
+            // margin-left: 
+            &:after{
+                content: "|";
+                display: inline-block;
+                padding: 0 0.7rem;
+                color: #646464;
+            }
+        }
+    }
+    span.jump-text{
+        font-family: Montserrat-Bold;
+        font-size: 13px;
+        color: #646464;
+        letter-spacing: 4.12px;
+        margin-right: 1rem;
+        text-transform: uppercase;
+    }
+}

@@ -104,6 +104,7 @@
   },
   "dependencies": {
     "bootstrap": "v4.0.0",
+    "gulp-sass": "^2.3.2",
     "jquery": "^3.3.1",
     "popper.js": "^1.12.9"
   }

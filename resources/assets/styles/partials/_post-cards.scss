@@ -23,24 +23,18 @@
         background-color: white;
 
         a.read-more{
-            display: inline-block;
             margin-top: 1rem;
-            border: 1px solid #1A1202;
-            border-radius: 52px;
-            font-family: HelveticaNeue-Bold;
-            font-size: 16px;
-            color: #1A1202;
-            letter-spacing: 2px;
-            text-align: center;
-            padding: 15px 35px;
+            @include rounded-btn;
         }
     }
 
     &__title{
         font-weight: $light;
         font-size: 24px;
-        color: #646464;
         letter-spacing: 1px;
+        a{
+            color: #646464;
+        }
     }
 
     &__featured-image{
@@ -75,4 +69,10 @@
             }
         }
     }
+}
+
+
+/** Individual Post Card section Bgs **/
+.travel__section{
+    background-color: $off-white;
 }

@@ -1,0 +1,17 @@
+.instagram{
+    &__header{
+        text-align: center;
+
+        .thin-header{
+            margin-bottom: 80px;
+        }
+
+        img{
+            margin-top: 30px;
+            margin-bottom: 30px;
+            @include device-up(t){
+                margin-top: 60px;
+            }
+        }
+    }
+}

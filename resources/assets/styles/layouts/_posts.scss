@@ -1,0 +1,25 @@
+.post-container{
+    max-width: 791px;
+
+    p{
+        font-family: Montserrat-Light;
+        font-size: 21px;
+        color: #646464;
+        letter-spacing: 2.33px;
+    }
+}
+
+.sec-featured-image{
+    height: 20.25rem;
+    @include divground;
+    @include device-up(lt){
+        height: 28.5rem;
+    }
+}
+
+
+.share-post{
+    padding-top: 71px;
+    padding-bottom: 76px;
+    text-align: center;
+}

@@ -1,6 +1,66 @@
 .destination{
+
+    padding-bottom: 5rem;
+
     &__inner-section{
         margin-top: 4.75rem;
+
+        // @include device-down(lt){
+        //     padding-bottom: 10.75rem;
+        // }
+
+        @include device-down(lt){
+            padding-bottom: 5rem;
+        }
         display: flex;
+    }
+
+    &__section{
+        @include device-up(lt){
+            padding-bottom: 8rem;
+        }
+        h2.section-header{
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+.manhattan{
+    &__feature{
+        @include build-columns-wrap();
+        // margin-top: 4rem;
+    }
+    &__left{
+        @include device-down(lt){
+            margin-bottom: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    &__right{
+        @include device-down(lt){
+            margin-top: 0;
+        }
+
+        h3{
+            font-weight: $bold;
+            font-size: 28px;
+            color: #646464;
+            letter-spacing: 1.5px;
+            line-height: 1.5;
+        }
+
+        p{
+            font-weight: $light;
+            font-size: 18px;
+            color: #646464;
+            letter-spacing: 0.8px;
+            text-align: left;
+        }
+
+        a.button{
+            @include rounded-btn;
+        }
     }
 }

@@ -1,3 +1,7 @@
+html {
+	-webkit-font-smoothing: antialiased;
+}
+
 h1,h2,h3,h4,h5,h6,hgroup,
 ul,ol,dd,
 p,figure,
@@ -27,7 +31,6 @@ h4 {
 
 p {
     font-size: 1em;
-    color: coral;
 }
 
 /* Font Weights */
@@ -46,15 +49,32 @@ $bold: 700;
     letter-spacing: 4.75px;
 }
 
+.header-subtitle{
+    font-size: 23px;
+    color: #646464;
+    max-width: 607px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .section-header{
     font-weight: $bold;
     font-size: 33px;
     color: #646464;
     letter-spacing: 4.12px;
     text-transform: uppercase;
-
+    text-align: center;
     padding-top: 2.5rem;
+    margin-bottom: 2.2rem;
     @include device-up(lt){
+        text-align: left;
         padding-top: 6.5rem;
+    }
+}
+
+.extra-spacing{
+    letter-spacing: 4.12px;
+    @include device-up(lt){
+        letter-spacing: 11.79px;
     }
 }

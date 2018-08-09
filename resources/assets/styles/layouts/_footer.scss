@@ -1,0 +1,146 @@
+.instagram-pics{
+    padding-left: 0;
+    li{
+        padding: 0;
+    }
+    span{
+        min-width: 100%;
+        min-height: 350px;
+        display: block;
+        @include divground;
+    }
+
+    .instagram-description{
+        p{
+            font-weight: 300;
+            padding: 0 1.5rem;
+            padding-top: 2rem;
+            font-size: 18px;
+        }
+    }
+
+    
+    li{
+        list-style: none;
+    }
+}
+
+.footer-widgets{
+    background-color: $off-white;
+    padding-bottom: 3rem;
+
+    p{
+        opacity: 0.5;
+        font-family: Montserrat-Light;
+        font-size: 24px;
+        color: #646464;
+        letter-spacing: 1px;
+        text-align: left;
+    }
+
+    ul{
+        margin-left: 0;
+        padding-left: 0;
+        li{
+            list-style: none;
+            a{
+                opacity: 0.5;
+                font-family: Montserrat-Light;
+                font-size: 24px;
+                color: #646464;
+                letter-spacing: 1px;
+                text-align: left;
+            }
+        }
+    }
+    
+
+    &__inner-container{
+        padding-top: 6.25rem;
+        padding-bottom: 3.5rem;
+        h3{
+            font-family: Montserrat-Bold;
+            font-size: 23px;
+            color: #646464;
+            letter-spacing: 4.12px;
+            position: relative;
+            margin-bottom: 3rem;
+            &:after{
+                position: absolute;
+                background-color: #646464;
+                bottom: -20px;
+                left: 0;
+                width: 36px;
+                height: 4px;
+                content: "";
+                opacity: 0.1;
+            }
+        }
+    }
+}
+
+.footer-info{
+    display: flex;
+    text-align: center;
+    @include device-down(t){
+    flex-wrap: wrap;
+    }
+    p{
+        margin: 0;
+        padding: 25px 0 21px 0;
+        font-weight: $light;
+        font-size: 18px;
+        color: #646464;
+    }
+    &__left{
+        width: 100%;
+        @include device-up(t){
+          width: 50%;
+          text-align: left;
+        }
+    }
+
+    &__right{
+        width: 100%;
+        @include device-up(t){
+            width: 50%;
+            text-align: right;
+        }
+    }
+}
+
+.footer-signup__section{
+    .email-signup__container{
+        display: flex;
+
+        .email-footer{
+            width: 70%;
+            border-radius: 6px;
+            padding: 9px;
+            border: 1px #646464 solid;
+        }
+        .submit-footer{
+            width: 30%;
+            -webkit-appearance: none;
+            border: none;
+            background: transparent;
+            /* Submit: */
+            font-family: Montserrat-Bold;
+            font-size: 13px;
+            color: #646464;
+            letter-spacing: 2.02px;
+            position: relative;
+            cursor: pointer;
+            &:after{
+                position: absolute;
+                background-color: #646464;
+                bottom: -5px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                opacity: 0.2;
+                content: "";
+            }
+        }
+    }
+}

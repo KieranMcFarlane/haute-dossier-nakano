@@ -1,13 +1,21 @@
+    @php
+        $featured_image = get_field('secondary_hero');
+        $featured_image_URL = $featured_image['url'];
+    @endphp
+
 <article @php(post_class())>
-  <header>
-    <h1 class="entry-title">{{ get_the_title() }}</h1>
-    @include('partials/entry-meta')
-  </header>
-  <div class="entry-content">
+    @include('partials.page-header')
+  <div class="container post-container entry-content">
     @php(the_content())
   </div>
-  <footer>
-    {!! wp_link_pages(['echo' => 0, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']) !!}
-  </footer>
-  @php(comments_template('/partials/comments.blade.php'))
+  <div style="background-image: url( <?php echo $featured_image_URL; ?> );" class="sec-featured-image">
+  </div>
 </article>
+<div class="share-post">
+  <div class="jump-to__section">
+      <span class="jump-text">Share this story:</span>
+        <a href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&amp;t=<?php the_title(); ?>">Facebook</a>
+        <a href="http://twitter.com/home/?status=<?php the_title(); ?> - <?php the_permalink(); ?>">Twitter</a>
+    </div>
+</div>
+
